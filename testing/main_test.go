@@ -45,7 +45,7 @@ func TestDivision(t *testing.T) {
 		got, err := divide(tt.dividend, tt.divisor)
 		if tt.isErr {
 			if err == nil {
-				t.Error("Expected an error but did not get one")
+				t.Error("Expected an error but did not get one", "/name:", tt.name)
 			}
 		} else {
 			if err != nil {
@@ -54,7 +54,7 @@ func TestDivision(t *testing.T) {
 		}
 
 		if got != tt.expected {
-			t.Errorf("Expected %f but got %f", tt.expected, got)
+			t.Errorf("Expected %f but got %f /name:%s", tt.expected, got, tt.name)
 		}
 	}
 }
