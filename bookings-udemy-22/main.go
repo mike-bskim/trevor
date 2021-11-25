@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-const portNumber = ":8080"
+const portNumber = ":3000"
 
 // Home is the handler for the home page
 func Home(w http.ResponseWriter, r *http.Request) {
@@ -17,7 +17,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 func About(w http.ResponseWriter, r *http.Request) {
 	sum := addValues(2, 2)
 	output := fmt.Sprintf("This is the about page and 2 + 2 is %d", sum)
-	fmt.Fprintf(w, output)
+	fmt.Fprintf(w, output, nil)
 }
 
 // addValues adds two ints x and y, and returns the sum

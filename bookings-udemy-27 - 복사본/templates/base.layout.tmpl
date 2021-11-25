@@ -1,3 +1,4 @@
+{{define "base"}}
     <!doctype html>
     <html lang="en">
     <head>
@@ -16,15 +17,15 @@
     </head>
     <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>This is the about page -----a</h1>
-                <!-- <p>This came from the template : {{index .StringMap "test"}}</p> -->
-            </div>
-        </div>
-    </div>
+    {{block "content" .}}
 
+    {{end}}
+
+
+    {{block "js" .}}
+
+    {{end}}
 
     </body>
     </html>
+{{end}}

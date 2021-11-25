@@ -17,7 +17,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 // About is the handler for the about page
 func About(w http.ResponseWriter, r *http.Request) {
 	sum := addValues(2, 2)
-	_, _ = fmt.Fprintf(w, fmt.Sprintf("This is the about page and 2 + 2 is %d", sum))
+	_, _ = fmt.Fprintf(w, fmt.Sprintf("This is the about page and 2 + 2 is %d", sum), nil)
 }
 
 // Divide divides one value into another and returns message with result
@@ -28,7 +28,7 @@ func Divide(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	_, _ = fmt.Fprintf(w, fmt.Sprintf("%f divided by %f is %f", 100.0, 10.0, f))
+	_, _ = fmt.Fprintf(w, fmt.Sprintf("%f divided by %f is %f", 100.0, 10.0, f), nil)
 }
 
 func divideValues(x, y float32) (float32, error) {
